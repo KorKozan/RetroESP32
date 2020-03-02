@@ -5,15 +5,15 @@ typedef struct{
   int w;
   int h;
 } SCR;
-SCR SCREEN = {0,0,320,240};
+static const SCR SCREEN = {0,0,320,240};
 
 // OFFSET
 typedef struct{
   int x;
   int y;
 } OFFSET;
-OFFSET POS = {64,32};
-OFFSET ORIGIN = {16,48};
+static const OFFSET POS = {64,32};
+static const OFFSET ORIGIN = {16,48};
 
 // LIST
 typedef struct{
@@ -23,7 +23,7 @@ typedef struct{
   int pages;
   int page;
 } LIST;
-LIST ROMS = {8, 0, 0, 0, 0};
+static LIST ROMS = {8, 0, 0, 0, 0};
 
 // FILE
 typedef struct{
@@ -35,7 +35,7 @@ typedef struct{
   bool ready;
   bool favorite;
 } LOAD;
-LOAD ROM;
+static LOAD ROM;
 
 // SYSTEM
 typedef struct SYSTEM_T{
@@ -43,7 +43,7 @@ typedef struct SYSTEM_T{
   const uint16_t (*system)[32][32];
   const uint16_t (*color)[32][32];
 } SYSTEM;
-SYSTEM SYSTEMS[COUNT] = {
+static SYSTEM SYSTEMS[COUNT] = {
   /* OPTIONS */
   {0, &settings, &settings_color},
   /* FAVORITES */
@@ -78,7 +78,7 @@ typedef struct{
   int fg;
   char name[10];
 } THEME;
-THEME THEMES[22] = {
+static const THEME THEMES[22] = {
   {32768,54580,"maroon"},
   {57545,62839,"red"},
   {64143,65049,"pink"},
@@ -102,4 +102,4 @@ THEME THEMES[22] = {
   {16936,48631,"dark"},
   {29614,52857,"light"}
 };
-THEME GUI;
+static THEME GUI;
